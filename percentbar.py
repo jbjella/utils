@@ -4,7 +4,7 @@
 
 import sys
 
-def start_progress(title):
+def percentbar_start(title):
     global progress_x
     global percent
     percent = 0
@@ -12,7 +12,7 @@ def start_progress(title):
     sys.stdout.flush()
     progress_x = 0
 
-def progress(x):
+def percentbar_progress(x):
     global progress_x
     global percent
     percent = x
@@ -21,6 +21,6 @@ def progress(x):
     sys.stdout.flush()
     progress_x = x
 
-def end_progress():
+def percentbar_end():
     sys.stdout.write("#"*(40 - progress_x) + "] ("+str(percent)+"%)\n")
     sys.stdout.flush()
