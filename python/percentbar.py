@@ -15,7 +15,7 @@ def percentbar_start(title):
 def percentbar_progress(x):
     global progress_x
     global percent
-    percent = x
+    percent = "{:.2f}".format(x)
     x = int(x * 40 // 100)
     sys.stdout.write("#"*(x - progress_x)+ "-"*(40-x) + "] (" + str(percent) + "%)" + chr(8)*(45-x+len(str(percent))))
     sys.stdout.flush()
